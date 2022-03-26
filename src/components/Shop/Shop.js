@@ -20,8 +20,8 @@ const Shop = () => {
         let newCart= [];
 
         const productExists = addedProduct.find(product=>product._id === selectedProduct._id);
-        console.log(productExists)
-        console.log(selectedProduct.id)
+        //console.log(productExists)
+        //console.log(selectedProduct.id)
         if(!productExists){
             newCart=[...addedProduct, selectedProduct];
             setaddedProduct(newCart)
