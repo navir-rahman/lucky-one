@@ -4,32 +4,35 @@ import Cart from '../cart/Cart';
 import './Shop.css';
 
 const Shop = () => {
+    //set and store api product data
     const [products, setProducts] = useState([]);
+    
+    //set and store cart product data
     const [addedProduct, setaddedProduct] = useState([]);
-
+    
+    //get api data
     useEffect(()=>{
         fetch('fakeDB.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     },[])
 
-
-    //use state to set added product
     //function for add to catr btn
     const addTOCartHandel= (selectedProduct) =>{
         let newCart= [];
 
         const productExists = addedProduct.find(product=>product._id === selectedProduct._id);
-        //console.log(productExists)
-        //console.log(selectedProduct.id)
         if(!productExists){
             newCart=[...addedProduct, selectedProduct];
             setaddedProduct(newCart)
         }else{
             alert("product already selected")
+        }
     }
+    //function for clearing all data
+    const clearcart=()=>{
+        setaddedProduct([]);
     }
-    //console.log(addedProduct)
 
     return (
         <div className='shopContainer'>
@@ -42,7 +45,7 @@ const Shop = () => {
             <div className="cartContainer">
                 {
                     //call cart and send addedProduct data to show on the frontend
-                    <Cart addedProduct={addedProduct}></Cart>
+                    <Cart clearfuntion={clearcart}  addedProduct={addedProduct}></Cart>
                 }
             </div>
             

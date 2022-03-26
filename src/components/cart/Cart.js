@@ -2,21 +2,26 @@ import React, { useState } from 'react';
 import './Cart.css';
 
 const Cart = (props) => {
+    console.log(props.clearfuntion)
     const product_amount = props.addedProduct.length;
-
+    
     //random number genarator
     const random = max => {
         return Math.floor(Math.random() * max);
     };
-
+    
     const [randomPlace,setrnadomplace]=useState([]);
-
+    
     const choeseHandel=()=>{
-    const randomniumber =random(product_amount)
-    setrnadomplace(props.addedProduct[randomniumber])
+        const randomniumber =random(product_amount)
+        setrnadomplace(props.addedProduct[randomniumber])
     }
-
-
+    //clear all data
+    const clearall=()=>{
+        props.clearfuntion();
+        setrnadomplace([])
+    }
+    
     return (
         <div>
            <h3 className="cartTitle">
@@ -40,7 +45,6 @@ const Cart = (props) => {
             </h3>
             <div className="selectedProductBox">
                 {/* show chossenitem  */}
-
                     <div className="cart_item">
                         <img src={randomPlace.picture} alt="" />
                         <h4>{randomPlace.name}</h4>
@@ -51,7 +55,7 @@ const Cart = (props) => {
                <p>CHOOSE ONE FOR ME</p>
            </button>
            <br />
-           <button className='pickRandom'>
+           <button onClick={clearall} className='pickRandom'>
                <p>CHOOSE AGAIN</p>
            </button>
         </div>
