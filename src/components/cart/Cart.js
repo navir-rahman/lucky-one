@@ -15,8 +15,12 @@ const Cart = (props) => {
     
     const choeseHandel=()=>{
         const randomniumber =random(product_amount)
-        setrnadomplace(props.addedProduct[randomniumber])
-        setstyle(optionalDisplay)
+        if(product_amount>0){
+            setrnadomplace(props.addedProduct[randomniumber])
+            setstyle(optionalDisplay)
+        }
+
+
     }
     //clear all data
     const clearall=()=>{

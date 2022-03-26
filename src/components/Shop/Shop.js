@@ -37,7 +37,7 @@ const Shop = () => {
     return (
         <div className='shopContainer'>
             <div>
-                
+                <h1 className='App'>Find your next vacation</h1>
                 <div className="productContainer">
                     {
                         //call product component
