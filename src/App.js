@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Shop from './components/Shop/Shop';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>This is react app test</h1>
-      </header>
+    <div>
+
+      <Shop></Shop>
     </div>
   );
 }
