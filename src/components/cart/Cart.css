@@ -4,10 +4,15 @@
     border-radius: 5px;
     margin: 10px 0;
     color: #fff;
-
+    display: flex;
+    align-items: center;
+}
+.pickRandom p{
+padding-right:5px ;
 }
 .pickRandom:hover{
     background-color: aquamarine;
+
 }
 
 .cart_item{

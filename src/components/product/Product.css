@@ -36,10 +36,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
 }
 .btn-cart .btn-text{
     margin-right: 5px;
 }
 .btn-cart:hover{
     background-color: aquamarine;
+
 }

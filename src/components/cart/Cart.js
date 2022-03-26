@@ -1,8 +1,9 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearchLocation, faRedo } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import './Cart.css';
 
 const Cart = (props) => {
-    console.log(props.clearfuntion)
     const optionalDisplay={};
     const product_amount = props.addedProduct.length;
     const [displaystyle,setstyle]=useState([])
@@ -60,10 +61,12 @@ const Cart = (props) => {
             </div>
            <button onClick={choeseHandel} className='pickRandom'>
                <p>CHOOSE ONE FOR ME</p>
+               <FontAwesomeIcon icon={faSearchLocation}></FontAwesomeIcon>
            </button>
            <br />
            <button onClick={clearall} className='pickRandom'>
                <p>CHOOSE AGAIN</p>
+               <FontAwesomeIcon icon={faRedo}></FontAwesomeIcon>
            </button>
         </div>
     );
