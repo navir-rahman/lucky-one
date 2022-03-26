@@ -3,8 +3,9 @@ import './Cart.css';
 
 const Cart = (props) => {
     console.log(props.clearfuntion)
+    const optionalDisplay={};
     const product_amount = props.addedProduct.length;
-    
+    const [displaystyle,setstyle]=useState([])
     //random number genarator
     const random = max => {
         return Math.floor(Math.random() * max);
@@ -15,11 +16,13 @@ const Cart = (props) => {
     const choeseHandel=()=>{
         const randomniumber =random(product_amount)
         setrnadomplace(props.addedProduct[randomniumber])
+        setstyle(optionalDisplay)
     }
     //clear all data
     const clearall=()=>{
         props.clearfuntion();
         setrnadomplace([])
+        setstyle({"display":"none"});
     }
     
     return (
@@ -45,7 +48,7 @@ const Cart = (props) => {
             </h3>
             <div className="selectedProductBox">
                 {/* show chossenitem  */}
-                    <div className="cart_item">
+                    <div style={displaystyle} className="cart_item">
                         <img src={randomPlace.picture} alt="" />
                         <h4>{randomPlace.name}</h4>
                     </div>
