@@ -36,11 +36,31 @@ const Shop = () => {
 
     return (
         <div className='shopContainer'>
-            <div className="productContainer">
-                {
-                    //call product component
-                    products.map(product => <Product key={product._id} product={product} addTOCartHandel={addTOCartHandel}></Product>)
-                }
+            <div>
+                
+                <div className="productContainer">
+                    {
+                        //call product component
+                        products.map(product => <Product key={product._id} product={product} addTOCartHandel={addTOCartHandel}></Product>)
+                    }
+
+
+                </div>
+                                {/* question and answer  */}
+                <div className="padding">
+                    <h2 className='App'>Question and answer</h2>
+                    <div className="questionnswer">
+                        <h3>How react works?</h3>
+                        <p>React uses lots of reusable component to create a single page. it also creates a vertual Dom. when user makes any changes react creates another vertual DOM
+                            and compares the changes between the old and the new DOM. after that react only updates the area where changes ocured.
+                        </p>
+                        <h3>How react works?</h3>
+                        <p>props is object of arbitary inputs . react function acpects as arguments. State is data that changes ovr the lifetime of a component.
+                            props are arguments that we can pass to a component, and state is something that is managed within the component and can change over time.
+                            porps are static and state are dynamic.
+                        </p>
+                    </div>
+                </div>
             </div>
             <div className="cartContainer">
                 {
